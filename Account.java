@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Account {
 	int accountNumber;
 	int pinCode;
