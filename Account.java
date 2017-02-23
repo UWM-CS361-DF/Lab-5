@@ -10,15 +10,7 @@ public class Account {
 	}
 	
 	public boolean validate(){
-		for(int i = 2; i >= 0; i --){
-			if(ATM.pin == pinCode){
-				return true;
-			}
-			else{
-				System.out.print(i + "chances left");
-			}
-		}
-		System.out.println("Invalid input! Please try again!");
-		return false;
+		if(ATM.pin == pinCode) return true;
+		else return false;
 	}
 }

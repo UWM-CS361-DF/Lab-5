@@ -7,24 +7,27 @@ public class ATM {
 	Bank bank = new Bank();
 	Account valid;
 	static int pin;
+	Scanner stdIn = new Scanner(System.in);
 	
 	public void start(){
-		System.out.println("Welcome use ATM!");
-		System.out.print("Enter Account Number: ");
-		int account = cr.acctNumber();
-		valid = bank.validate(account);
-		while(valid == null){
-			System.out.println("Invalid Account!");
-			System.out.println("Welcome use ATM!");
-			System.out.print("Enter Account Number: ");
-			account = cr.acctNumber();
+		do{
+			int account = cr.acctNumber();
 			valid = bank.validate(account);
-		}
+		}while(valid == null);
+		
 		System.out.print("Enter PIN: ");
-		Scanner stdIn = new Scanner(System.in);
-		pin = stdIn.nextInt();
-		if(valid.validate()){
-			
+		for(int i = 2; i >= 0; i--){
+			pin = stdIn.nextInt();
+			if(valid.validate()){
+				System.out.println("Choose Transaction");
+				
+			}
+			else{
+				System.out.println(i + " chances left");
+				if(i == 0){
+					System.out.println("Invalid input! Please try again!");
+				}
+			}
 		}
 		stdIn.close();
 	}
