@@ -1,8 +1,9 @@
 import java.util.*;
-public class CardReader {
+public class CardReader{
 	static Scanner stdIn = new Scanner(System.in);
 
-	public static int acctNumber(){
+	public int acctNumber(){
+		System.out.println("Welcome use ATM!");
 		System.out.print("Enter Account Number: ");
 		int account = stdIn.nextInt();
 		return account;
