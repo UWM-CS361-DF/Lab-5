@@ -4,14 +4,14 @@ public class Account {
 	int balance;
 	
 	public Account(int acct, int pin, int bal){
-		this.accountNumber = acct;
-		this.pinCode = pin;
-		this.balance = bal;
+		accountNumber = acct;
+		pinCode = pin;
+		balance = bal;
 	}
 	
 	public boolean validate(){
 		for(int i = 2; i >= 0; i --){
-			if(Bank.a.pinCode == pinCode){
+			if(ATM.pin == pinCode){
 				return true;
 			}
 			else{
