@@ -7,14 +7,13 @@ public class Bank {
 		accounts.add(new Account(6789, 4321, 60));
 	}
 	Account acct;
-	public Account validate(int account) throws Exception{
-		int i = 0;
-		while(acct.accountNumber != account){
-			i++;
+	public Account validate(int account){
+		for(int i = 0; i < accounts.size(); i ++){
 			acct = accounts.get(i);
-			if(i >= accounts.size())
-				throw new Exception("Error");
+			if(acct.accountNumber == account){
+				return acct;
+			}
 		}
-		return acct;
+		return null;
 	}
 }
