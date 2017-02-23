@@ -5,20 +5,27 @@ public class ATM {
 	Printer pt = new Printer();
 	CashDispenser cash = new CashDispenser();
 	Bank bank = new Bank();
-	int valid;
+	Account valid;
 	static int pin;
-	int bal;
-	Account acct = new Account(valid, pin, bal); 
 	
-	public void start() throws Exception{
+	public void start(){
+		System.out.println("Welcome use ATM!");
+		System.out.print("Enter Account Number: ");
 		int account = cr.acctNumber();
 		valid = bank.validate(account);
-		System.out.println("Enter PIN: ");
+		while(valid == null){
+			System.out.println("Invalid Account!");
+			System.out.println("Welcome use ATM!");
+			System.out.print("Enter Account Number: ");
+			account = cr.acctNumber();
+			valid = bank.validate(account);
+		}
+		System.out.print("Enter PIN: ");
 		Scanner stdIn = new Scanner(System.in);
 		pin = stdIn.nextInt();
-		if(acct.validate()){
+		if(valid.validate()){
 			
 		}
+		stdIn.close();
 	}
-
 }
