@@ -12,7 +12,7 @@ public class Account {
 	}
 	
 	public boolean validate(){
-		for(int i = 3; i > 0; i --){
+		for(int i = 2; i >= 0; i --){
 			if(Bank.a.pinCode == pinCode){
 				return true;
 			}
