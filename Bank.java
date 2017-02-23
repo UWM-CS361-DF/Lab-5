@@ -8,13 +8,13 @@ public class Bank {
 		accounts.add(new Account(6789, 4321, 60));
 	}
 	
-	public Account validate(int account) throws Exception{
+	public int validate(int account) throws Exception{
 		int i = 0;
 		while(accounts.get(i).accountNumber != account){
 			i++;
 			if(i >= accounts.size())
 				throw new Exception("Error");
 		}
-		return accounts.get(i);
+		return accounts.get(i).accountNumber;
 	}
 }
